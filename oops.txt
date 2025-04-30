@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class FunctionOverloading {
+public:
+    void display(int num) {
+        cout << "Integer: " << num << endl;
+    }
+
+    void display(double num) {
+        cout << "Double: " << num << endl;
+    }
+
+    void display(string text) {
+        cout << "String: " << text << endl;
+    }
+};
+
+class Base {
+public:
+    virtual void show() {
+        cout << "Base Class Show Function" << endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        cout << "Derived Class Show Function" << endl;
+    }
+};
+
+int main() {
+    FunctionOverloading obj1;
+    cout << "Function Overloading Demonstration:" << endl;
+    obj1.display(5);
+    obj1.display(3.14);
+    obj1.display("Hello");
+
+
+    cout << "\nFunction Overriding Demonstration:" << endl;
+    Base* basePtr;
+    Derived obj2;
+    basePtr = &obj2;
+    basePtr->show();
+
+    return 0;
+}

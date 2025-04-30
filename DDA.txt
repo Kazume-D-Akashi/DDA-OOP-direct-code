@@ -1,0 +1,24 @@
+
+def nth_max_min(lst, n):
+    if n > len(lst) or n < 1:
+        return "N is out of range"
+    
+    lst.sort()
+    nth_min = lst[n - 1] 
+    nth_max = lst[-n]    
+    return nth_min, nth_max
+
+arr = [7, 3, 9, 1, 5, 12, 8]
+n = 2
+result = nth_max_min(arr, n)
+print(f"{n}th Min: {result[0]}, {n}th Max: {result[1]}")
+
+numbers = [95, 88, 76, 100, 82, 90, 99, 70, 85, 91]
+numbers.sort()
+print("Sorted list:", numbers)
+
+second_highest = numbers[-2]
+third_lowest = numbers[2]
+
+print("2nd Highest:", second_highest)
+print("3rd Lowest:", third_lowest)
